@@ -1,3 +1,4 @@
+
 def welcome
   # code #welcome here
   puts "Welcome to the Blackjack Table"
@@ -32,8 +33,9 @@ def initial_round
   # code #initial_round here
   card1 = deal_card
   card2 = deal_card
-  display_card_total(card1 + card2)
-  card1 + card2
+  card_total = card1 + card2
+  display_card_total(card_total)
+  card_total
 end
 
 def hit?(card_total)
@@ -44,7 +46,7 @@ def hit?(card_total)
     card_total += deal_card
   elsif answer == "s"
     card_total
-  elsif answer != "h" || answer != "s"
+  else
     invalid_command
     prompt_user
   end
